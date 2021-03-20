@@ -24,7 +24,8 @@
     <div class="col"></div>
     <div class="col-md-6 border border-success rounded text-success p-5">
             <h1>Temperatura dla <span th:text="${weatherData.name}"></span>
-                wynosi <span th:text="${weatherData.main.temp}"></span></h1>
+                wynosi <span th:text="${weatherData.main.temp}"></span>
+                <span th:text="${unit.description}"></span></h1>
 
     </div>
     <div class="col"></div>

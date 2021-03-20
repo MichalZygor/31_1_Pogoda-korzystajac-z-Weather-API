@@ -7,5 +7,4 @@ public class WeatherResponseDto {
     private String cod;
     private String name;
     private WeatherMainDto main;
-    //private WeatherDto weather;
 }

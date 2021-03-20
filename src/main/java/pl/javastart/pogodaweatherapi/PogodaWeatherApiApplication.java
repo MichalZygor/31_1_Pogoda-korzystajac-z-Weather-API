@@ -9,5 +9,4 @@ public class PogodaWeatherApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(PogodaWeatherApiApplication.class, args);
     }
-
 }

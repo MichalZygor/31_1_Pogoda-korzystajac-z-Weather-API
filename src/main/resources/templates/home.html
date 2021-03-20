@@ -23,23 +23,26 @@
 <div class="container-fluid row text-center mt-5">
     <div class="col"></div>
     <div class="col-md-6 border border-primary rounded text-dark p-5">
-        <form th:action="@{/check-temp}" method="post" class="needs-validation" novalidate >
+        <form th:action="@{/check-temp}" method="post" class="needs-validation" novalidate>
 
             <input name="q" type="text" minlength="3" required class="form-control"/>
+            <div class="invalid-feedback">
+                Proszę wpisać nazwę!
+            </div>
 
-
-            <label for="sel1" class="form-label my-3">Wybierz język w którym chcesz otrzymać komunikat:</label>
+            <label for="sel1" class="form-label my-3">Język komunikatu:</label>
             <select class="form-select-sm" name="lang" id="sel1">
-                <option value="pl" selected>pl</option>
-                <option value="en">en</option>
+                <option value="pl" th:each="lang : ${languageList}" th:value="${lang}" th:text="${lang.description}">pl</option>
             </select>
+
             <br/>
             <label for="sel2" class="form-label my-3">Wybierz jednostkę temperatury:</label>
             <select class="form-select-sm" name="unit" id="sel2">
-                <option value="metric" selected>Celsius</option>
-                <option value="imperial">Fahrenheit</option>
-                <option value="">Kelvin</option>
+                <option th:each="unita : ${unitList}" th:value="${unita}"
+                        th:text="${unita.description}">
+                </option>
             </select>
+
 
             <div class="my-3">
                 <button class="btn btn-secondary" type="reset">Wyczyść formularz</button>

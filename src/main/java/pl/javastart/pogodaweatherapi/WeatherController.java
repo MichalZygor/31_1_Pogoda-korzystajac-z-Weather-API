@@ -16,7 +16,8 @@ public class WeatherController {
 
     @GetMapping("/")
     public String home(Model model) {
-       // model.addAttribute("weatherData", weatherService.getCurrentData());
+        model.addAttribute("unitList", UnitList.values());
+        model.addAttribute("languageList",Language.values());
         return "home";
     }
 
@@ -25,6 +26,7 @@ public class WeatherController {
                            @RequestParam(required = true, defaultValue = "pl") String lang,
                            @RequestParam(required = true, defaultValue = "metric") String unit) {
         model.addAttribute("weatherData", weatherService.getCurrentData(q, unit, lang));
+        model.addAttribute("unit", UnitList.valueOf(unit));
         return "result";
     }
 }

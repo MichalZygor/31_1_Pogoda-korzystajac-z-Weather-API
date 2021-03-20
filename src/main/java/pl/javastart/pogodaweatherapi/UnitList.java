@@ -1,8 +1,8 @@
 package pl.javastart.pogodaweatherapi;
 
 public enum UnitList {
-    IMPERIAL("Fahrenheit "),
     METRIC("Celsius"),
+    IMPERIAL("Fahrenheit "),
     DEFAULT("Kelvin");
 
     private final String description;
@@ -15,7 +15,5 @@ public enum UnitList {
         return description;
     }
 
-    public String getUriBySelection(String unit){
-        return (unit.equals(UnitList.DEFAULT) ? "" : "units=" + unit.toLowerCase());
-    }
+
 }
